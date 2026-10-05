@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+* {
+  border-color: theme("colors.line");
+}
+
+:focus-visible {
+  outline: 2px solid theme("colors.navy.DEFAULT");
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::selection {
+  background-color: theme("colors.amber.pale");
+  color: theme("colors.ink");
+}
+
+/* Faint ruled-margin texture used behind the hero, evoking notebook paper. */
+.ruled-margin {
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 39px,
+    theme("colors.line") 39px,
+    theme("colors.line") 40px
+  );
+  background-size: 100% 40px;
+}
